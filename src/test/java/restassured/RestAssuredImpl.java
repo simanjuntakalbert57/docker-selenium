@@ -21,6 +21,7 @@ public class RestAssuredImpl {
                         "  \"email\": \"albertjuntak13@gmail.com\",\n" + //
                         "  \"password\": \"afteroffice123\"\n" + //
                         "}";
+
         // Send POST request to login endpoint
         Response response = RestAssured.given()
                 .contentType("application/json")
@@ -107,7 +108,7 @@ public class RestAssuredImpl {
         System.out.println("Response: " + response.asPrettyString());
     }
 
-    @Test
+    @Test()
     public void testGetAllEmployee(){
         /*
          * Define the base URL for the API
