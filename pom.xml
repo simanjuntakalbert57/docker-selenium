@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -68,6 +68,11 @@
             <version>7.22.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.33.0</version>
+        </dependency>
     </dependencies>
     <build>
         <!-- To define the plugin version in your parent POM -->
@@ -81,7 +86,7 @@
                         <forkCount>0</forkCount>
                         <suiteXmlFiles>
                             <!-- <suiteXmlFile>src/test/resources/testng_simple_suite.xml</suiteXmlFile> -->
-                            <suiteXmlFile>src/test/resources/testng_parallel_suite.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/selenium.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
