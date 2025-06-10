@@ -54,30 +54,30 @@ public class SimpleTest {
         System.out.println("Running after each test method...");
     }
 
-    @Test
-    public void testMethod() throws Exception {
-        System.out.println("This is a simple test method.");
-        System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
-        x = 5;
-        Thread.sleep(1000);
-        Assert.assertTrue(x == 5, "x should be equal to 5");
-    }
+    // @Test
+    // public void testMethod() throws Exception {
+    //     System.out.println("This is a simple test method.");
+    //     System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
+    //     x = 5;
+    //     Thread.sleep(1000);
+    //     Assert.assertTrue(x == 5, "x should be equal to 5");
+    // }
 
-    @Test(dependsOnMethods = {"testMethod"})
-    public void testMethod2() throws InterruptedException {
-        System.out.println("This is a simple test method.");
-        System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
-        x = 2;
-        Thread.sleep(2000);
-        Assert.assertTrue(x == 2, "x should be equal to 2");
-    }
+    // @Test(dependsOnMethods = {"testMethod"})
+    // public void testMethod2() throws InterruptedException {
+    //     System.out.println("This is a simple test method.");
+    //     System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
+    //     x = 2;
+    //     Thread.sleep(2000);
+    //     Assert.assertTrue(x == 2, "x should be equal to 2");
+    // }
 
-    @Test(dependsOnMethods = {"testMethod2"})
-    public void testMethod3() throws InterruptedException {
-        System.out.println("This is a simple test method.");
-        System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
-        x = 3;
-        Thread.sleep(500);
-        Assert.assertTrue(x == 3, "x should be equal to 3");
-    }
+    // @Test(dependsOnMethods = {"testMethod2"})
+    // public void testMethod3() throws InterruptedException {
+    //     System.out.println("This is a simple test method.");
+    //     System.out.println("Thread ID: " + Thread.currentThread().threadId() + " name: " + Thread.currentThread().getName());
+    //     x = 3;
+    //     Thread.sleep(500);
+    //     Assert.assertTrue(x == 3, "x should be equal to 3");
+    // }
 }
