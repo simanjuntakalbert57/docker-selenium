@@ -2,6 +2,8 @@ package selenium.selenium_scenario;
 
 import org.testng.annotations.Test;
 
+import com.demo.pageobjects.LoginPage;
+
 import java.util.List;
 
 import org.testng.annotations.BeforeClass;
@@ -36,10 +38,13 @@ public class CheckoutTest {
         System.out.println("Valid credentials test is running.");
 
         //Insert credential
-        driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
-        driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
+        // driver.findElement(By.id("userEmail")).sendKeys("simanjuntakalbert57@gmail.com");
+        // driver.findElement(By.id("userPassword")).sendKeys("XBf@rWNvByn!#K8");
 
-        driver.findElement(By.id("login")).click();
+        // driver.findElement(By.id("login")).click();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginApplication("simanjuntakalbert57@gmail.com", "XBf@rWNvByn!#K8");
 
         String homepage = driver.findElement(By.xpath("//div[@class = 'left mt-1']/p")).getText();
 

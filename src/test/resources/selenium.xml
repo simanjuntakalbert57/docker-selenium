@@ -3,7 +3,7 @@
 <suite name="Selenium" verbose="1">
   <test name="SeleniumRegression">
     <classes>
-      <class name="selenium.selenium_scenario.CheckoutTest"/>
+      <class name="selenium.selenium_scenario.CheckoutTestImplPOM"/>
     </classes>
   </test>
 </suite>
