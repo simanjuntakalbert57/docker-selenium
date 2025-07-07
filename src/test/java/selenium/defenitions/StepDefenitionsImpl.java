@@ -1,20 +1,22 @@
 package selenium.defenitions;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.demo.base.BaseTest;
 import com.demo.pageobjects.CartPage;
 import com.demo.pageobjects.ConfirmationPage;
 import com.demo.pageobjects.DashboardPage;
 import com.demo.pageobjects.LoginPage;
 import com.demo.pageobjects.OrderPage;
 
+import hooks.WebDriverHooks;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class StepDefenitionsImpl extends BaseTest{
+public class StepDefenitionsImpl{
     /*
      *  Given User landing to logged ecommerce
         When User input email "" and password ""
@@ -28,13 +30,11 @@ public class StepDefenitionsImpl extends BaseTest{
 
      @Given("User landing to logged ecommerce")
      public void landingPage(){
-        super.setUp();
-        loginPage = new LoginPage(driver);
-        dashboardPage = new DashboardPage(driver);
-        cartPage = new CartPage(driver);
-        orderPage = new OrderPage(driver);
-        confirmationPage = new ConfirmationPage(driver);
-
+        loginPage = new LoginPage(WebDriverHooks.driver);
+        dashboardPage = new DashboardPage(WebDriverHooks.driver);
+        cartPage = new CartPage(WebDriverHooks.driver);
+        orderPage = new OrderPage(WebDriverHooks.driver);
+        confirmationPage = new ConfirmationPage(WebDriverHooks.driver);
      }
 
      @When("User input email {string} and password {string}")

@@ -20,6 +20,10 @@ public class ConfigManager {
     public static String getToken(){
         return dotenv.get("TOKEN");
     }
+
+    public static String getEnv(){
+        return dotenv.get("ENVIRONMENT");
+    }
 }
 
 

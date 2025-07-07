@@ -1,21 +1,13 @@
 package runner;
 
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-import io.cucumber.java.BeforeAll;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-
-@RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/features",
-    glue = "defenitions",
-    plugin = {"pretty",                                   // Pretty console output
-                "html:target/cucumber-report.html",          // HTML report
-                "json:target/cucumber-report.json",          // JSON report
-                "junit:target/cucumber-report.xml"           // JUnit XML report
-            }
+    features = "src/test/resources/features/selenium",
+    glue = {"selenium.defenitions", "hooks"},
+    plugin = {"pretty", "html:target/cucumber-report.html"},
+    monochrome = true
 )
-
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests {
 }
